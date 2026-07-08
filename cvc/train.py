@@ -119,7 +119,7 @@ def test(epoch, model):
 
 # adjust learning rate #
 def adjust_learning_rate(optimizer, iters):
-    lr = learning_rate * (1 - iters / args.maxiter) ** 0.9
+    lr = args.learning_rate * (1 - iters / args.maxiter) ** 0.9
     for param_group in optimizer.param_groups:
         param_group['lr'] = lr
 
